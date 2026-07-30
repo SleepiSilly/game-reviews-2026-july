@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrap Mechanic 1.0 "Drilling Thunder" Review | Dev_In_Training_02</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: 'Inter' for clean reading, 'Fira Code' for the SWE aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Reading Progress Bar -->
+    <div id="progress-bar"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <span class="logo">&gt;_ DEV_IN_TRAINING_02</span>
+            <span class="status-indicator">SYSTEM: ONLINE</span>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="blog-post">
+            <header class="post-header">
+                <div class="tags">
+                    <span class="tag">System.out.println("Review");</span>
+                    <span class="tag alert">Status: Rant</span>
+                </div>
+                <h1 class="post-title">Axolot Games Spent 10 Years Cooking and Served Us Spaghetti Code: My Scrap Mechanic 1.0 "Drilling Thunder" Review</h1>
+                <div class="post-meta">
+                    <div class="author-info">
+                        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=DevInTraining02&backgroundColor=1a1a2e" alt="Avatar" class="avatar">
+                        <div>
+                            <span class="author-name">Dev_In_Training_02</span>
+                            <span class="post-date">July 2026 // v1.0.0</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="post-content">
+                <p class="lead">Alright, let's be real for a second. After ten years of Early Access, Axolot Games finally pushed to main and released Scrap Mechanic 1.0 with the long-awaited "Drilling Thunder" update. The hype across the community was significant, with many expressing excitement for the final release.</p>
+                
+                <p>However, as someone who spends time reading technical documentation, building complex logic controllers, and preparing for a career in software architecture, I am really underwhelmed.</p>
+                
+                <p>We waited ten full years for Chapter 2, and what we received is a textbook case of scope creep, unoptimized technical debt, and bloated feature sets. Let’s break down this release line by line.</p>
+
+                <h2><span class="highlight">01.</span> Storyline & Voice-Acted NPCs (Classic Feature Creep)</h2>
+                <p>They attempted to transform Survival mode into a full narrative campaign. You crash land, investigate the reason the Farmbots became hostile, and follow questlines with voice-acted NPCs at locations like the Farmers Hideout.</p>
+                <p>While the voice acting is professional, bolting a linear narrative onto an emergent sandbox game feels misguided. The engineering resources spent on dialogue trees and narrative triggers would have been better utilized refactoring the physics thread. I came to build 16-cylinder engine piston cars, not engage in scripted conversations to unlock rewards.</p>
+
+                <h2><span class="highlight">02.</span> Excavation Island & The Underground (A Tech Debt Nightmare)</h2>
+                <p>Excavation Island was marketed as a major feature—a large zone with deep cave systems where you use the new Plasma Drill and Plasma Saw to mine stronger minerals. On paper, it is a compelling addition. In execution, it is a significant performance issue.</p>
+                <p>The subsurface raycasting and dynamic cave lighting negatively impact GPU performance. When combined with the new surface biomes and weather systems, it is clear their profiling tools were overlooked. Instead of multithreading the terrain rendering, the frame rate suffers significantly whenever entering deep caves.</p>
+
+                <h2><span class="highlight">03.</span> Claygun & Voxel Deforming (Pathfinding Meltdown)</h2>
+                <p>The Claygun allows for real-time terrain deformation in both Creative and Survival modes. While technically interesting, dynamic voxel destruction is demanding on physics calculations.</p>
+                <p>Furthermore, bots can now navigate through player-created barriers. This creates a conflict when the A* pathfinding node graph fails as a Minerbot attempts to tunnel through player-placed clay. Having multiple bots enter a pathfinding loop, driving CPU usage to 100%, represents complete abysmal game design.</p>
+
+                <h2><span class="highlight">04.</span> Bot Roster Overhaul & Combat Balancing (Cheap Difficulty Scaling)</h2>
+                <p>The enemy roster practically tripled with Cablebots, Minerbots, Seekerbots, specialized Totebot and Tapebot variants, and the Trash Bot and Drillbot bossfights. To counter them, we have the Fire Launcher, Cornade, Scrap Spud Gun, and Claygun.</p>
+                <p>However, Axolot's approach to game balance often involves giving the Red Explosive Totebot massive Area of Effect (AOE) damage that instantly destroys complex structural builds. This is not engaging combat; it is artificial difficulty resulting from imprecise unit balancing. If a game forces players into a hyper-specific defensive meta simply to survive a single unit, the core design loop is flawed.</p>
+
+                <h2><span class="highlight">05.</span> Blueprints, Scrap City Garage & New Parts (The Only Good PR)</h2>
+                <p>Credit is due for the new schematic system and the ability to spawn Creative mode builds directly into Survival via the Scrap City Garage; this is effective UX design.</p>
+                <p>The new building components—ladders, UV grow beds, digital clocks, freezers, and interactive blocks—add functional modularity. However, it is fair to ask why implementing a blueprint loader for Survival required ten years. Implementing JSON serialization for blueprint loading is a straightforward task that should not have taken this long.</p>
+
+                <h2><span class="highlight">06.</span> Technical Netcode "Fixes" & The Post-Launch Patch Parade</h2>
+                <p>Axolot claimed major netcode and multiplayer performance optimizations. While there are slight improvements compared to 2021, multi-joint complex vehicles remain prone to physics desynchronization when a second player joins a host session.</p>
+                <p>Furthermore, the necessity of pushing patches 1.0.1 and 1.0.2 within 72 hours of release to address quest progression, chest logic errors, and UI glitches indicates that the QA testing phase was rushed to meet a deadline.</p>
+
+                <div class="verdict-card">
+                    <div class="verdict-header">return finalVerdict();</div>
+                    <div class="verdict-body">
+                        <h3>Corporate Software Engineer Verdict</h3>
+                        <div class="score"><span class="highlight">5.5</span> / 10</div>
+                        <p>Scrap Mechanic 1.0 is playable, but as someone who prioritizes code optimization, clean system architecture, and realistic product roadmaps, this release is disappointing. Axolot Games spent ten years layering features without resolving the underlying legacy technical debt. Had this been my sprint backlog, these gimmicks would have been deprioritized in favor of physics multithreading and native modding API development.</p>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <section class="video-section">
+                    <h2>Scrap Mechanic 1.0 & Drilling Thunder Launch Trailer</h2>
+                    <p class="video-desc">This trailer provides a visual overview of the major features, underground cave systems, and world overhaul introduced in the 1.0 update.</p>
+                    
+                    <div class="video-wrapper">
+                        <!-- Standard YouTube embed iframe. Replace the specific string after /embed/ if the official ID ever drops -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=devintraining02" 
+                            title="Scrap Mechanic 1.0 Launch Trailer" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>Built with precision by Dev_In_Training_02. Expect bugs to be tracked.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
