@@ -41,19 +41,19 @@
             </header>
 
             <div class="post-content">
-                <p class="lead">After ten years of Early Access, Axolot Games finally pushed to main and released Scrap Mechanic 1.0 with the long-awaited "Drilling Thunder" update. The hype across the community was significant, with many expressing excitement for the final release.</p>
+                <p class="lead">After ten years of Early Access, Axolot Games finally pushed to main and released Scrap Mechanic 1.0 with the long-awaited "Drilling Thunder" update. The hype across the community was pretty significant, with lots of people expressing excitement for the release.</p>
                 
                 <p>However, as someone who spends time reading technical documentation, building complex logic controllers, and preparing for a career in software architecture, I am already very underwhelmed.</p>
                 
-                <p>We waited six full years for Chapter 2, and what we received is a textbook case of scope creep, unoptimized technical debt, and bloated feature sets. Let’s break down this release line by line.</p>
+                <p>We waited six full years for Chapter 2, and what we received is a textbook case of scope creep, unoptimized technical debt, and bloated feature sets.</p>
 
-                <h2><span class="highlight">01.</span> Storyline & Voice-Acted NPCs (Classic Feature Creep)</h2>
-                <p>They attempted to transform Survival mode into a full narrative campaign. You crash land, investigate the reason the Farmbots became hostile, and follow questlines with voice-acted NPCs at locations like the Farmers Hideout.</p>
-                <p>While the voice acting is professional, bolting a linear narrative onto an emergent sandbox game feels misguided. The engineering resources spent on dialogue trees and narrative triggers would have been better utilized refactoring the physics thread. I came to build 16-cylinder engine piston cars, not engage in scripted conversations to unlock rewards.</p>
+                <h2><span class="highlight">01.</span> Storyline & Voice-Acted NPCs</h2>
+                <p>They attempted to transform Survival mode into a full narrative campaign. You crash land, investigate the reason the Farmbots became hostile, follow questlines with voice-acted NPCs at locations like the Farmers Hideout, and try to escape the planet.</p>
+                <p>While the voice acting is pretty good, bolting a linear narrative onto a sandbox game feels misguided. The engineering resources spent on dialogue trees and narrative triggers would have been better utilized refactoring the physics thread. I came to build 16-cylinder engine piston cars, not engage in scripted conversations to unlock rewards.</p>
 
-                <h2><span class="highlight">02.</span> Excavation Island & The Underground (A Tech Debt Nightmare)</h2>
-                <p>Excavation Island was marketed as a major feature—a large zone with deep cave systems where you use the new Plasma Drill and Plasma Saw to mine stronger minerals. On paper, it is a compelling addition. In execution, it is a significant performance issue.</p>
-                <p>The subsurface raycasting and dynamic cave lighting negatively impact GPU performance. When combined with the new surface biomes and weather systems, it is clear their profiling tools were overlooked. Instead of multithreading the terrain rendering, the frame rate suffers significantly whenever entering deep caves.</p>
+                <h2><span class="highlight">02.</span> Excavation Island & The Underground</h2>
+                <p>The Excavation Island was marketed as a major feature—a large zone with deep cave systems where you use the new Plasma Drill and Plasma Saw to mine stronger minerals. On paper, is sounds like a good addition. In execution, it's a big performance issue.</p>
+                <p>The subsurface raycasting and dynamic cave lighting negatively impact GPU performance. When combined with the new surface biomes and weather systems, it's clear their profiling tools were overlooked. Instead of multithreading the terrain rendering, the frame rate gets absolutely FRIED whenever entering deep caves.</p>
 
                 <h2><span class="highlight">03.</span> Claygun & Voxel Deforming (Pathfinding Meltdown)</h2>
                 <p>The Claygun allows for real-time terrain deformation in both Creative and Survival modes. While technically interesting, dynamic voxel destruction is demanding on physics calculations.</p>
