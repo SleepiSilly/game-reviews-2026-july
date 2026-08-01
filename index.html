@@ -41,27 +41,27 @@
             </header>
 
             <div class="post-content">
-                <p class="lead">After ten years of Early Access, Axolot Games finally pushed to main and released Scrap Mechanic 1.0 with the long-awaited "Drilling Thunder" update. The hype across the community was pretty significant, with lots of people expressing excitement for the release.</p>
+                <p class="lead">After ten years of Early Access, Axolot Games finally pushed to main and released Scrap Mechanic 1.0 with the long-awaited "Drilling Thunder" update. The hype across the community was pretty significant, with lots of people being excited for the release.</p>
                 
                 <p>However, as someone who spends time reading technical documentation, building complex logic controllers, and preparing for a career in software architecture, I am already very underwhelmed.</p>
                 
-                <p>We waited six full years for Chapter 2, and what we received is a textbook case of scope creep, unoptimized technical debt, and bloated feature sets.</p>
+                <p>We waited six full years for Chapter 2, and what we got is a textbook case of scope creep, unoptimized technical debt, and bloated feature sets.</p>
 
                 <h2><span class="highlight">01.</span> Storyline & Voice-Acted NPCs</h2>
-                <p>They attempted to transform Survival mode into a full narrative campaign. You crash land, investigate the reason the Farmbots became hostile, follow questlines with voice-acted NPCs at locations like the Farmers Hideout, and try to escape the planet.</p>
-                <p>While the voice acting is pretty good, bolting a linear narrative onto a sandbox game feels misguided. The engineering resources spent on dialogue trees and narrative triggers would have been better utilized refactoring the physics thread. I came to build 16-cylinder engine piston cars, not engage in scripted conversations to unlock rewards.</p>
+                <p>They tried to turn Survival mode into a full narrative campaign. You crash land, investigate the reason the Farmbots went hostile, follow questlines with voice-acted NPCs at locations like the Farmers Hideout, and try to escape the planet.</p>
+                <p>While the voice acting is pretty good, bolting a linear narrative onto a sandbox game just feels weird. The engineering resources spent on dialogue trees and narrative triggers would have been better utilized refactoring the physics thread. I came to build 16-cylinder engine piston cars, not engage in scripted conversations to unlock rewards.</p>
 
                 <h2><span class="highlight">02.</span> Excavation Island & The Underground</h2>
-                <p>The Excavation Island was marketed as a major feature—a large zone with deep cave systems where you use the new Plasma Drill and Plasma Saw to mine stronger minerals. On paper, is sounds like a good addition. In execution, it's a big performance issue.</p>
-                <p>The subsurface raycasting and dynamic cave lighting negatively impact GPU performance. When combined with the new surface biomes and weather systems, it's clear their profiling tools were overlooked. Instead of multithreading the terrain rendering, the frame rate gets absolutely FRIED whenever entering deep caves.</p>
+                <p>The Excavation Island was shown off as a major feature—a large zone with deep cave systems where you use the new Plasma Drill and Plasma Saw to mine stronger minerals. On paper, is sounds like a good addition. In execution, it's a big performance issue.</p>
+                <p>The subsurface raycasting and dynamic cave lighting negatively impact GPU performance. When combined with the new surface biomes and weather systems, it's clear their profiling tools were overlooked. Instead of multithreading the terrain rendering, the frame rate gets absolutely FRIED whenever you enter a deep cave.</p>
 
-                <h2><span class="highlight">03.</span> Claygun & Voxel Deforming (Pathfinding Meltdown)</h2>
-                <p>The Claygun allows for real-time terrain deformation in both Creative and Survival modes. While technically interesting, dynamic voxel destruction is demanding on physics calculations.</p>
-                <p>Furthermore, bots can now navigate through player-created barriers. This creates a conflict when the A* pathfinding node graph fails as a Minerbot attempts to tunnel through player-placed clay. Having multiple bots enter a pathfinding loop, driving CPU usage to 100%, represents complete abysmal game design.</p>
+                <h2><span class="highlight">03.</span> Claygun & Voxel Deforming</h2>
+                <p>The Claygun basically lets you make and sculpt your own terrain in both Creative and Survival mode. While it's a really interesting concept, dynamic voxel destruction becomes demanding on physics calculations.</p>
+                <p>Furthermore, bots can now navigate through player-created barriers. This creates a conflict when the A* pathfinding node graph fails as a Minerbot attempts to tunnel through player-placed clay. Having multiple bots enter a pathfinding loop, driving CPU usage to 100%, is not in any way good game design.</p>
 
-                <h2><span class="highlight">04.</span> Bot Roster Overhaul & Combat Balancing (Cheap Difficulty Scaling)</h2>
-                <p>The enemy roster practically tripled with Cablebots, Minerbots, Seekerbots, specialized Totebot and Tapebot variants, and the Trash Bot and Drillbot bossfights. To counter them, we have the Fire Launcher, Cornade, Scrap Spud Gun, and Claygun.</p>
-                <p>However, Axolot's approach to game balance often involves giving the Red Explosive Totebot massive Area of Effect (AOE) damage that instantly destroys complex structural builds. This is not engaging combat; it is artificial difficulty resulting from imprecise unit balancing. If a game forces players into a hyper-specific defensive meta simply to survive a single unit, the core design loop is flawed.</p>
+                <h2><span class="highlight">04.</span> Bot Roster Overhaul & Combat Balancing</h2>
+                <p>The enemy roster practically tripled with Cablebots, Minerbots, Seekerbots, specialized Totebot and Tapebot variants, and the Trash Bot and Drillbot bossfights. To counter them, Axolot added new weapons such as the Scrap Spud Gun, Cornade, and the Fire Launcher.</p>
+                <p>However, Axolot's approach to game balance involves giving the Red Explosive Totebot massive Area of Effect (AOE) damage that instantly destroys complex structural builds. This is NOT engaging combat; it's just artificial difficulty resulting from bad enemy balancing. If a game forces players to use meta weapons and materials simply to survive a single unit, then the core design is completely flawed.</p>
 
                 <h2><span class="highlight">05.</span> Blueprints, Scrap City Garage & New Parts (The Only Good PR)</h2>
                 <p>Credit is due for the new schematic system and the ability to spawn Creative mode builds directly into Survival via the Scrap City Garage; this is effective UX design.</p>
